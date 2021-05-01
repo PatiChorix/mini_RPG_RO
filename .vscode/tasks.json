@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build My Particule project",
+            "type": "shell",
+            "command": "C:\\msys64\\mingw64\\bin\\g++ -g src/*.cpp -o bin/main -I include -L lib -lmingw32 -lSDL2main -lSDL2",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Run pati particule",
+            "command": "bin\\main.exe",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

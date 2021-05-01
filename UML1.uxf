@@ -1,0 +1,142 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes
+
+</help_text><element><id>UMLClass</id><coordinates><x>280</x><y>440</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Player&gt;&gt;
+Package::classes.character
+
+--
+id: int
+--
++ select ???
++ level_up
++ update_stat ??
++ equip_equipment
++ stripp_equipment</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>80</y><w>190</w><h>290</h></coordinates><panel_attributes>/Character/
+Package::classes.character
+
+--
+- name: str
+- current_hp: int
+- current_mp: int
+- stats: np.matrix
+- alive: bool
+- tran_matrix: np.matrix
+- level
+- skill_level
+--
++ move
++ use_skill
++ attack
++ speak
++ apply_buff
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>440</y><w>210</w><h>200</h></coordinates><panel_attributes>&lt;&lt;Mob&gt;&gt;
+Package::classes.character
+
+--
+id: int
+--
++ auto_move
++ agro
++ auto_combat
++ spawn
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>360</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>360</y><w>200</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;180;50;180;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>920</x><y>0</y><w>190</w><h>220</h></coordinates><panel_attributes>&lt;&lt;Inventory&gt;&gt;
+Package::classes.item
+
+--
+- name: str = "Unmamed"
+- bibli_items: {("item": Items): qty: int} = {}
+- weight: int = 1
+--
+- __str__()
+- add_item()
+- remove_item()
+- nb_items
+- nb_of()
+- select_item()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1230</x><y>90</y><w>190</w><h>130</h></coordinates><panel_attributes>/Items/
+Package::classes.item
+
+--
+name: int
+description: str = ""
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>350</y><w>190</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Usable&gt;&gt;
+Package::classes.item
+
+--
+type; str = "Usable"
+point_usable: int
+--
++ use_item</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>350</y><w>190</w><h>130</h></coordinates><panel_attributes>&lt;&lt;miscellaneous&gt;&gt;
+Package::classes.item
+
+--
+type; str = "miscellaneous"
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1660</x><y>350</y><w>200</w><h>130</h></coordinates><panel_attributes>/equipment/
+Package::classes.item
+
+--
+type: str = "equipment"
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>210</y><w>30</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>210</y><w>240</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60;220;60;220;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>210</y><w>450</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60;430;60;430;140</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>140</y><w>470</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+1</panel_attributes><additional_attributes>10;20;450;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>80</y><w>190</w><h>260</h></coordinates><panel_attributes>/Skill/
+Package::classes.character
+
+--
+- name: str
+- description: str
+- type: str
+- property
+- level
+- range: int
+- cost
+- cast_delay
+- cast_time
+- zone: (int, int)
+--
++ use_skill
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1660</x><y>560</y><w>190</w><h>130</h></coordinates><panel_attributes>&lt;&lt;weapon&gt;&gt;
+Package::classes.item
+
+--
+type: str = "equipment/weapon"
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1910</x><y>560</y><w>190</w><h>210</h></coordinates><panel_attributes>&lt;&lt;armor&gt;&gt;
+Package::classes.item
+
+--
+type: str = "equipment/armor"
+def: int
+required_lv: int
+required_jobs: { class(str) : bool} 
+buff_stat: [STR: int, INT: int, AGI: int, DEX: int, VIT; int, LUK: int]
+buff tbd
+property
+nb_slot
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1940</x><y>350</y><w>190</w><h>130</h></coordinates><panel_attributes>&lt;&lt;card&gt;&gt;
+Package::classes.item
+
+--
+tbd
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>680</y><w>210</w><h>200</h></coordinates><panel_attributes>&lt;&lt;MVP&gt;&gt;
+Package::classes.character
+
+--
+minions: [Mob]*n
+--
++ MVP_spawn
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>630</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1740</x><y>470</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1740</x><y>470</y><w>280</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;260;50;260;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2530</x><y>850</y><w>190</w><h>130</h></coordinates><panel_attributes>&lt;&lt;card&gt;&gt;
+Package::Classes
+
+--
+tbd
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+1..n</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1845</x><y>392</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>150</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element></diagram>
