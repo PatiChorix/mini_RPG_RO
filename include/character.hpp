@@ -2,6 +2,7 @@
 #define CHARACTER_HPP_
 #include <iostream>
 
+#include "inventory.hpp"
 
 namespace RO {
 
@@ -14,6 +15,7 @@ namespace RO {
         int m_level;
         int m_skill_level;
         int m_id;
+        Inventory *m_my_inventory;
     public:
         Character();
         ~Character();

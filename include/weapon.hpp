@@ -1,6 +1,7 @@
-#ifndef EQUIPMENT_HPP_
-#define EQUIPMENT_HPP_
+#ifndef WEAPON_HPP_
+#define WEAPON_HPP_
 #include <iostream>
+#include "item.hpp"
 #include "equipment.hpp"
 
 namespace RO {
