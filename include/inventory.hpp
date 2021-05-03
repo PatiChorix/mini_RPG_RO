@@ -8,7 +8,7 @@
 namespace RO {
     class Inventory {
     public:
-        const static int MAX_ITEMS = 200;
+        const static int MAX_ITEMS = 100;
     protected:
         std::string m_name;
         Item *mp_items;
@@ -22,5 +22,4 @@ namespace RO {
         void remouve_item(Item *item_to_remouve);
     };
 }
-
 #endif
